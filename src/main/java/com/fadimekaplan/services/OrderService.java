@@ -26,8 +26,7 @@ public class OrderService implements IOrderService {
  
     
     public DTOOrder placeOrder(Integer customerId) {
-        Cart cart = cartRepository.findById(customerId)
-                .orElseThrow(() -> new RuntimeException("Cart not found"));
+        Cart cart = cartRepository.findByCustomerId(customerId);
 
         
         Double totalPrice = 0.0;

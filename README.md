@@ -17,4 +17,11 @@ PRODUCT :
 
 CreateProduct_POST
 
-![alt text](JavaChallenge_Postman/Product/CreateProduct_POST.png)
+
+# Screenshots
+![Project Postman]()                     
+_The page that will appear in the browser without any login._
+</br>    
+![Project Screenshot2]()
+_The page that will appear in the browser after login._
+</br>   
