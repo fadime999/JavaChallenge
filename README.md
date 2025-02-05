@@ -17,4 +17,4 @@ PRODUCT :
 
 CreateProduct_POST
 
-![alt text](CreateProduct_POST.png)
+![alt text](JavaChallenge_Postman/Product/CreateProduct_POST.png)
