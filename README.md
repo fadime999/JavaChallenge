@@ -11,7 +11,7 @@ Spring Boot (Spring Data JPA, Spring Web)
 POSTRESQL
 Lombok (Kodun sadeleştirilmesi için)
 Jackson (JSON dönüşümlerinde döngüleri önlemek için)
-BeanUtils
+BeanUtils (BeanUtils ile nesneler arasında veri transferi yaparken manuel olarak her bir alanı kopyalama gereksinimini ortadan kaldırarak, kodumu daha temiz ve verimli hale getirdim.)
 
 # PRODUCT POSTMAN:
 
@@ -37,3 +37,15 @@ _The page that will appear in the delete product._
  ![AddCustomer_POST Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Customer/AddCustomer_POST.png)
 _The page that will appear in the add customer._
  
+ # CART POSTMAN:
+
+ # GetCart_GET
+![GetCart_GET Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Cart/GetCart_GET.png)
+_The page that will appear in the get cart._
+
+# ORDER POSTMAN:
+
+![getAllOrdersForCustomer_GET Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Order/getAllOrdersForCustomer_GET.png)
+![getAllOrdersForCustomer_GET Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Order/getAllOrdersForCustomer_GET_2.png)
+_The pages that will appear in the get all orders for customer._
+
