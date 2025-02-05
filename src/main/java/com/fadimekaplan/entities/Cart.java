@@ -31,8 +31,8 @@ public class Cart extends BaseEntity{
     @JoinColumn(name = "CustomerId")
     private Customer customer;
 	
-	@JsonBackReference("cartItemReference")  
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonManagedReference("cartItemReference") 
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     private List<CartItem> cartItems;
     
 }

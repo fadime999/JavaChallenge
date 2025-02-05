@@ -1,6 +1,7 @@
 package com.fadimekaplan.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,9 +22,10 @@ public class CartController {
 	   @Autowired
 	   private CartService cartService;
 	   
-	    @PostMapping("/{customerId}/add/{productId}")
-	    public Cart addProductToCart(@PathVariable Integer customerId, @PathVariable Integer productId, @RequestParam Integer quantity) {
-	        return cartService.addProductToCart(customerId, productId, quantity);
+	    @PostMapping("/{cartId}/add/{productId}")
+	    public ResponseEntity<Cart> addProductToCart(@PathVariable Integer cartId, @PathVariable Integer productId, @RequestBody Integer quantity) {
+	    	  Cart updatedCart = cartService.addProductToCart(cartId, productId, quantity);
+	    	  return ResponseEntity.ok(updatedCart); 
 	    }
  
 	    @DeleteMapping("/{customerId}/remove/{productId}")
@@ -37,8 +39,9 @@ public class CartController {
 	    }
 
 	    @PutMapping("/update/{customerId}")
-	    public Cart updateCart(@PathVariable Integer customerId, @RequestBody Cart cart) {
-	        return cartService.updateCart(customerId, cart);
+	    public ResponseEntity<Cart> updateCart(@PathVariable Integer customerId, @RequestBody Cart cart) {
+	    	Cart updatedCart = cartService.updateCart(customerId, cart);
+	    	return ResponseEntity.ok(updatedCart);  
 	    }
 
 

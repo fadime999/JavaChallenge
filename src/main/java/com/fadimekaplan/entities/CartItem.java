@@ -1,5 +1,6 @@
 package com.fadimekaplan.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
@@ -23,12 +24,12 @@ public class CartItem extends BaseEntity {
 	  @JoinColumn(name = "product_id")
 	  private Product product;
 	  
-	  @JsonManagedReference("cartItemReference")
+	  @JsonBackReference("cartItemReference")  
 	  @ManyToOne
 	  @JoinColumn(name = "cart_id")
 	  private Cart cart;
 	  
-	  @Column(name="Quantity")
-	  private Integer Quantity;
+	  @Column(name="quantity")
+	  private Integer quantity;
 
 }
