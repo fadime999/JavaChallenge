@@ -44,19 +44,19 @@ _The page that will appear in the add customer._
 _The page that will appear in the get cart._
 
 # addProductCart_POST
-![addProductCart_POST Postman]()
+![addProductCart_POST Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Cart/addProductCart_POST.png)
 _The page that will appear in the add product cart._
 
 # removeProductFromCart_DELETE
-![removeProductFromCart_DELETE Postman]()
+![removeProductFromCart_DELETE Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Cart/removeProductFromCart_DELETE.png)
 _The page that will appear in the add remove product from cart._
 
 # emptyCart
-![emptyCart Postman]()
+![emptyCart Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Cart/emptyCart.png)
 _The page that will appear in the empty cart items._
 
 # UpdateCart
-![UpdateCart Postman]()
+![UpdateCart Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Cart/UpdateCart.png)
 _The page that will appear in the update cart._
 
 # ORDER POSTMAN:
@@ -67,7 +67,7 @@ _The page that will appear in the update cart._
 _The pages that will appear in the get all orders for customer._
 
 # getOrderCode_GET
-![getOrderCode_GET Postman]()
+![getOrderCode_GET Postman](https://github.com/fadime999/JavaChallenge/blob/main/src/main/java/com/JavaChallenge_Postman/Order/getOrderCode_GET.png)
 _The page that will appear in the get Order Code._
 
 
