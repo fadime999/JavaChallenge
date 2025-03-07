@@ -1,7 +1,9 @@
 package com.fadimekaplan.services;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,24 +29,28 @@ public class OrderService implements IOrderService {
     
     public DTOOrder placeOrder(Integer customerId) {
         Cart cart = cartRepository.findByCustomerId(customerId);
-
-        
-        Double totalPrice = 0.0;
+      
         List<OrderItem> orderItems = new ArrayList<OrderItem>();
         for (CartItem item : cart.getCartItems()) {
             Product product = item.getProduct();
             if (product.getStockQuantity() < item.getQuantity()) {
                 throw new RuntimeException("Not enough stock for product " + product.getProductName());
             }
-            totalPrice += product.getPrice() * item.getQuantity();
             orderItems.add(new OrderItem(product, product.getPrice(), item.getQuantity()));
         }
-
-       
+        
+        String orderCode = "ORD-" + System.currentTimeMillis();
         Order order = new Order();
+        order.setCreatedDate(LocalDateTime.now());
+        order.setUpdatedDate(LocalDateTime.now());
+
         order.setCustomer(cart.getCustomer());
-        order.setTotalPrice(totalPrice);
-        order.setOrderItems(orderItems); 
+        order.setTotalPrice(cart.getTotalPrice());
+        order.setOrdercode(orderCode);
+        order.setOrderItems(orderItems.stream()
+                .map(item -> new OrderItem(item.getProduct(), item.getPriceAtPurchase(), item.getQuantity()))
+                .collect(Collectors.toList())); 
+        
         orderRepository.save(order);
         
         // DTO'ya dönüştürme

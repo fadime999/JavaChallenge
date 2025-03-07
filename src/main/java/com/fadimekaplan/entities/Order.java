@@ -36,6 +36,6 @@ public class Order extends BaseEntity{
     private Customer customer;
     
 	@JsonManagedReference("orderReference")  
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 }
